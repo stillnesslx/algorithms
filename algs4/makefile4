@@ -1,0 +1,13 @@
+CC=gcc
+CFLAGS=-I 
+DEPS=gcd.h
+OBJ=gcd.o main_gcd.o
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+main_gcd: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
+
+
+#main_gcd:gcd.c main_gcd.c
+#	gcc -o main_gcd gcd.c main_gcd.c
